@@ -8,8 +8,8 @@ import time
 now = datetime.utcnow().strftime('%Y-%m-%d')
 
 with st.sidebar:
-    image = Image.open('Cropped.png')
-    st.image(image, caption='BET223', width=100)
+    #image = Image.open('Cropped.png')
+    #st.image(image, caption='BET223', width=100)
     st.sidebar.title("VOUS ÊTES PASSIONNÉ PAR LE SPORT ET PAR LE JEU ? AVEC BET223, FAITES DE VOTRE PASSION UN GAIN !")
     st.sidebar.write('\n')
     st.sidebar.write('\n')
