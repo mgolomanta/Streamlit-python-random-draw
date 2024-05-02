@@ -49,7 +49,7 @@ with st.container():
             with col1:
                 # Extract the values from the specified column
                 data = df[column_name].tolist()
-                st.subheader("Liste des tickets participants :")
+                st.subheader("All data :")
                 styled_df = df.style.set_table_styles([
                         {'selector': 'th', 'props': [('font-weight', 'bold')]},
                         {'selector': 'td', 'props': [('font-weight', 'bold')]},
