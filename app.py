@@ -69,18 +69,7 @@ with st.container():
                     st.write('\n')
                     st.write('\n')
                     st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
-                    st.write('\n')
+                    
                     
                     timer(10)
                 
