@@ -10,13 +10,15 @@ now = datetime.utcnow().strftime('%Y-%m-%d')
 with st.sidebar:
     #image = Image.open('Cropped.png')
     #st.image(image, caption='BET223', width=100)
-    st.sidebar.title("VOUS ÊTES PASSIONNÉ PAR LE SPORT ET PAR LE JEU ? AVEC BET223, FAITES DE VOTRE PASSION UN GAIN !")
+    st.sidebar.title("Welcome! ")
+    st.sidebar.write('\n')
+    st.sidebar.write("The purpose of this little application is to enable you to carry out a live random draw. It's designed in python and streamlit .")
     st.sidebar.write('\n')
     st.sidebar.write('\n')
     st.sidebar.write('\n')
-    st.sidebar.write('\n')
-    st.sidebar.write('\n')
-    st.sidebar.write("BET223 est une société Malienne, dirigée par des Maliens pour les Maliens. La société BET223 fait partie du groupe BET2AFRICA, elle intervient, en partenariat avec le PMU-Mali, dans le secteur des jeux et loisirs. BET223 s’est très rapidement positionné comme un acteur incontournable dans son domaine, pour la République du Mali. Notre plus grande force, c’est le travail et l’engagement de nos équipes, et nous travaillons chaque jour en étroite collaboration avec nos fournisseurs et partenaires locaux pour participer activement au développement de notre environnement et de la communauté Malienne.")
+    st.sidebar.write('NB: You can modify the parameters of this little application to suit your needs!!!!')
+    st.sidebar.subheader('How it work!')
+    st.sidebar.write("To carry out your draw, first upload an excel file containing the data on which the draw will be made, then just click on the 'Run' button and after 10 seconds the result of the draw will be displayed on your screen.")
 
 with st.container():
     def random_value(Content):
@@ -33,9 +35,9 @@ with st.container():
         timer_text.empty()
 
     def main():
-        st.title(f"Bienvenue au Tirage au sort aléatoire d'un millionnaire pour la date du {now}.")
+        st.title(f"Welcome to the Random Draw for the date of {now}.")
         # File upload widget
-        uploaded_file = st.file_uploader("Charger le fichier", type=["xlsx", "xls"])
+        uploaded_file = st.file_uploader("Upload your file", type=["xlsx", "xls"])
 
         if uploaded_file is not None:
             # Read the uploaded Excel file
@@ -56,7 +58,7 @@ with st.container():
                 # Display the values from the specified column
                 st.write(styled_df)
             # Button to trigger the random value selection
-            if st.button("Lancer le Tirage"):
+            if st.button("Run"):
                 # Set the time to 10 seconds to wait before the random value selection
                 #time.sleep(10)
                 with col2:
@@ -84,7 +86,7 @@ with st.container():
                 
                 try:
                     result = random_value(data)
-                    st.markdown("<p style='font-size:20px; font-weight:bold;'>Le ticket gagnant est le ticket avec l'ID :</p>", unsafe_allow_html=True)
+                    st.markdown("<p style='font-size:20px; font-weight:bold;'>The value drawn is :</p>", unsafe_allow_html=True)
                     st.markdown(f"<p style='font-size:100px; font-weight:bold; background-color: #f20683;color: #fff; text-align: center;border: 2px solid #02044b; border-radius: 10px; padding: 10px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);'>{result}</p>", unsafe_allow_html=True)
                 except Exception as e:
                     st.error(f"An error occurred: {e}")
